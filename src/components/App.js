@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import '../styles/App.css'
 import Tabs from './dashboard/Tabs'
 import Inputs from './navbar/Inputs'
-import Frontpage from './dashboard/Frontpage'
+import Today from './dashboard/today/Today'
 import Urine from './dashboard/urine/Urine'
 import Gtube from './dashboard/gtube/Gtube'
 import Ostomy from './dashboard/ostomy/Ostomy'
-import Summary from './dashboard/Summary'
+import Summary from './dashboard/summary/Summary'
+import Labs from './dashboard/labs/Labs'
 
 class App extends Component {
   constructor (props) {
@@ -34,7 +35,7 @@ class App extends Component {
             activeTab={this.state.activeTab}
             changeTab={this.changeTab} />
 
-          {this.state.activeTab === 0 ? <Frontpage /> : null}
+          {this.state.activeTab === 0 ? <Today /> : null}
           {this.state.activeTab === 1 ? <Summary /> : null}
           {this.state.activeTab === 2 ? <Urine /> : null}
           {this.state.activeTab === 3 ? <Gtube /> : null}

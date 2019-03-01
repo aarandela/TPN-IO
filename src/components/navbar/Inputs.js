@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PickDate from '../dashboard/PickDate'
 
-export default class Inputs extends Component {
+class Inputs extends Component {
   constructor (props) {
     super(props)
 
@@ -104,3 +104,5 @@ export default class Inputs extends Component {
     )
   }
 }
+
+export default Inputs
