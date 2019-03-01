@@ -28,6 +28,13 @@ const inputReducer = (state = initialState, action) => {
     case 'ADD_GTUBE':
       return state
       break
+    case 'ADD_OSTOMY':
+      return state
+      break
+    case 'ADD_ORAL':
+      return state
+      break
+    case 'DELETE'
     default:
       return state
   }
