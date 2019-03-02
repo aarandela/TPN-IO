@@ -16,19 +16,19 @@ export default class Today extends Component {
   render () {
     return (
       <React.Fragment>
-        <section class='section' style={{ padding: '20px 0 10px 0' }}>
-          <div class='container'>
-            <h1 class='title has-text-centered' style={{ padding: '0' }}
+        <section className='section' style={{ padding: '20px 0 10px 0' }}>
+          <div className='container'>
+            <h1 className='title has-text-centered' style={{ padding: '0' }}
             >Recent Inputs
             </h1>
           </div>
         </section>
 
-        <div class='columns'>
+        <div className='columns'>
           <RecentInputs />
         </div>
 
-        <div class='tile is-ancestor'>
+        <div className='tile is-ancestor'>
           <TodayUrine />
           <TodayGtube />
           <TodayOstomy />

@@ -62,6 +62,7 @@ class Inputs extends Component {
   }
 
   render () {
+    console.log('props or my redux state', this.props.inputs)
     return (
       <form onSubmit={this.handleSubmit}>
         <div className='columns box'>
@@ -109,11 +110,16 @@ class Inputs extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+  inputs: state.input
 })
 
 const mapDispatchToProps = (dispatch) => ({
-
+  addUrine: (input) => dispatch({
+    type: 'ADD_URINE',
+    value: input.value,
+    date: input.date,
+    comments: input.comments
+  })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Inputs)

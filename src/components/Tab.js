@@ -5,9 +5,9 @@ const Tab = ({ label, isActive, handleClick, icon }) => {
     <div>
       <li className={isActive ? 'is-active' : ''}
         onClick={() => handleClick()} >
-        <a>
+        <button className='button is-dark'>
           <i className={icon} />
-          &nbsp; {label}</a>
+          &nbsp; {label}</button>
       </li>
     </div>
   )

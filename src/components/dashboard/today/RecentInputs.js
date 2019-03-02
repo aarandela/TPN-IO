@@ -5,7 +5,7 @@ export default class RecentInputs extends Component {
   render () {
     return (
       <div>
-        <div class='columns'>
+        <div className='columns'>
           <InputCard />
         </div>
       </div>

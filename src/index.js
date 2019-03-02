@@ -11,6 +11,7 @@ import { createStore } from 'redux'
 import reducers from './reducers/reducer'
 
 const store = createStore(reducers)
+console.log('index.js', store)
 
 ReactDOM.render(
   <Provider store={store}>

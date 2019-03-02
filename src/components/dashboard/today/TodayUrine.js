@@ -3,12 +3,12 @@ import React from 'react'
 const TodayUrine = () => {
   return (
     <div>
-      <div class='tile is-parent'>
-        <article class='tile is-child notification is-warning has-text-centered'>
-          <div class='content'>
-            <p class='title'>Urine</p>
-            <p class='subtitle has-text-left'>With even more content</p>
-            <div class='content has-text-left'>
+      <div className='tile is-parent'>
+        <article className='tile is-child notification is-warning has-text-centered'>
+          <div className='content'>
+            <p className='title'>Urine</p>
+            <p className='subtitle has-text-left'>With even more content</p>
+            <div className='content has-text-left'>
                   content here
             </div>
           </div>
