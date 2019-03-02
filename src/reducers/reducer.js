@@ -6,10 +6,11 @@ const initialState = {
     comments: 'yellow'
   },
   {
-    type: 'urine',
+    type: 'ostomy',
     value: 20,
     date: 'Fri Mar 01 2019 13:44:28',
-    comments: 'amber'
+    comments: 'watery',
+    ostomyChange: 1
   },
   {
     type: 'gtube',
@@ -35,7 +36,11 @@ const inputReducer = (state = initialState, action) => {
       return state
 
     case 'DELETE':
-      return state
+      const newInput = state.input
+      newInput.filter((data, index) => index !== action.index)
+      return {
+        input: newInput
+      }
 
     default:
       return state

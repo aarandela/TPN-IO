@@ -12,17 +12,27 @@ class RecentInputs extends Component {
     this.handleDelete = this.handleDelete.bind(this)
   }
 
-  handleDelete (evt) {
-
+  handleDelete (index) {
+    console.log(this.props.inputValues)
+    this.props.delete(index)
   }
 
   render () {
-    console.log('in recentInputs.js', this.props.inputValues)
+    console.log('in recentInputs.js', this.props)
     const { inputValues } = this.props
     return (
       <div>
         <div className='columns'>
-          <InputCard inputValues={inputValues} />
+          {this.props.inputValues.map((value, index) =>
+            <InputCard key={index}
+              index={index}
+              type={value.type}
+              value={value.value}
+              date={value.date}
+              comments={value.comments}
+              ostomyChange={value.ostomyChange}
+              handleDelete={this.handleDelete}
+            />)}
         </div>
       </div>
     )
@@ -36,11 +46,12 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addUrine: (input) => dispatch({
-    type: 'ADD_URINE',
-    value: input.value,
-    date: input.date,
-    comments: input.comments
+  delete: (index) => dispatch({
+    type: 'DELETE',
+    value: null,
+    date: null,
+    comments: null,
+    ostomyChange: null
   })
 })
 
