@@ -21,22 +21,22 @@ const initialState = {
 }
 
 const inputReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_URINE':
       return state
-      break
+
     case 'ADD_GTUBE':
       return state
-      break
+
     case 'ADD_OSTOMY':
       return state
-      break
+
     case 'ADD_ORAL':
       return state
-      break
+
     case 'DELETE':
       return state
-      break
+
     default:
       return state
   }

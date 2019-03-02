@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PickDate from '../dashboard/PickDate'
+import PickDate from '../PickDate'
 import { connect } from 'react-redux'
 
 class Inputs extends Component {
@@ -38,7 +38,7 @@ class Inputs extends Component {
       value: evt.target.value
     })
   }
-  
+
   handleComments (evt) {
     this.setState({
       comments: evt.target.value
@@ -81,19 +81,21 @@ class Inputs extends Component {
               handleChange={this.handleChangeDate} />
           </div>
           <div className='column'>
-            {this.state.type === 'oral' ? <input className='input is-rounded'
-              type='text'
-              placeholder='Intake Value'
-              onChange={this.handleInputValue} /> : <input className='input is-rounded'
-              type='text'
-              placeholder='Output Value'
-              onChange={this.handleInputValue} />}
+            {this.state.type === 'oral'
+              ? <input className='input is-rounded'
+                type='text'
+                placeholder='Intake Value'
+                onChange={this.handleInputValue} />
+              : <input className='input is-rounded'
+                type='text'
+                placeholder='Output Value'
+                onChange={this.handleInputValue} />}
           </div>
-          {this.state.type === 'ostomy' ?  <div className='column'>
-            <input className='input is-rounded' type='text' placeholder='# of times changed' value={this.state.ostomyChange} onChange={this.handleOstomy}/>
+          {this.state.type === 'ostomy' ? <div className='column'>
+            <input className='input is-rounded' type='text' placeholder='# of times changed' value={this.state.ostomyChange} onChange={this.handleOstomy} />
           </div> : null}
           <div className='column'>
-            <input className='input is-rounded' type='text' placeholder='Comments' value={this.state.comments} onChange={this.handleComments}/>
+            <input className='input is-rounded' type='text' placeholder='Comments' value={this.state.comments} onChange={this.handleComments} />
           </div>
           <div className='column'>
             <div className='control'>
