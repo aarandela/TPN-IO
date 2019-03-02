@@ -34,7 +34,9 @@ const inputReducer = (state = initialState, action) => {
     case 'ADD_ORAL':
       return state
       break
-    case 'DELETE'
+    case 'DELETE':
+      return state
+      break
     default:
       return state
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PickDate from '../dashboard/PickDate'
+import { connect } from 'react-redux'
 
 class Inputs extends Component {
   constructor (props) {
@@ -105,4 +106,12 @@ class Inputs extends Component {
   }
 }
 
-export default Inputs
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = (dispatch) => ({
+
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Inputs)
