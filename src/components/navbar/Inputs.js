@@ -62,7 +62,7 @@ class Inputs extends Component {
   }
 
   render () {
-    console.log('props or my redux state', this.props.inputs)
+    console.log('props or my redux state', this.props.inputValues)
     return (
       <form onSubmit={this.handleSubmit}>
         <div className='columns box'>
@@ -109,9 +109,11 @@ class Inputs extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  inputs: state.input
-})
+const mapStateToProps = (state) => {
+  return {
+    inputValues: state.input
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
   addUrine: (input) => dispatch({
