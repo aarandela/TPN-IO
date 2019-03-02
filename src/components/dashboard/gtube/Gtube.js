@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DateRange from '../DateRange'
+import DateRange from '../../DateRange'
 
 export default class Gtube extends Component {
   render () {

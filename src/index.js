@@ -11,8 +11,9 @@ import { createStore } from 'redux'
 import reducers from './reducers/reducer'
 
 const store = createStore(reducers)
+console.log('index.js', store)
 
 ReactDOM.render(
-      <Provider store={store}>
-        <App />
-      </Provider>, document.getElementById('root'))
+  <Provider store={store}>
+    <App />
+  </Provider>, document.getElementById('root'))

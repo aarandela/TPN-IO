@@ -2,41 +2,46 @@ const initialState = {
   input: [{
     type: 'urine',
     value: 68,
-    date: 'Fri Mar 01 2019 13:44:24 GMT-0600 (Central Standard Time)',
+    date: 'Fri Mar 01 2019 13:44:24',
     comments: 'yellow'
   },
   {
-    type: 'urine',
+    type: 'ostomy',
     value: 20,
-    date: 'Fri Mar 01 2019 13:44:28 GMT-0600 (Central Standard Time)',
-    comments: 'amber'
+    date: 'Fri Mar 01 2019 13:44:28',
+    comments: 'watery',
+    ostomyChange: 1
   },
   {
     type: 'gtube',
     value: 20,
-    date: 'Fri Mar 01 2019 13:45:28 GMT-0600 (Central Standard Time)',
+    date: 'Fri Mar 01 2019 13:45:28',
     comments: 'green'
   }
   ]
 }
 
 const inputReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_URINE':
       return state
-      break
+
     case 'ADD_GTUBE':
       return state
-      break
+
     case 'ADD_OSTOMY':
       return state
-      break
+
     case 'ADD_ORAL':
       return state
-      break
+
     case 'DELETE':
-      return state
-      break
+      const newInput = state.input
+      newInput.filter((data, index) => index !== action.index)
+      return {
+        input: newInput
+      }
+
     default:
       return state
   }
