@@ -53,6 +53,12 @@ class Inputs extends Component {
 
   handleSubmit (evt) {
     evt.preventDefault()
+    this.props.add(
+      this.state.type,
+      this.state.value,
+      this.state.date,
+      this.state.comments,
+      this.state.ostomyChange)
     evt.target.reset()
     this.setState({
       value: null,
@@ -62,10 +68,12 @@ class Inputs extends Component {
   }
 
   render () {
-    console.log('props or my redux state', this.props.inputValues)
+    console.log('in inputs', this.props)
     return (
       <form onSubmit={this.handleSubmit}>
         <div className='columns box'>
+
+          {/* value */}
           <div className='column is-one-fifth is-right'>
             <div className='select is-rounded is-fullwidth'>
               <select value={this.state.type} onChange={this.handleType}>
@@ -76,11 +84,15 @@ class Inputs extends Component {
               </select>
             </div>
           </div>
+
+          {/* date */}
           <div className='column'>
             <PickDate
               date={this.state.date}
               handleChange={this.handleChangeDate} />
           </div>
+
+          {/* ternary for oral/ostomy category */}
           <div className='column'>
             {this.state.type === 'oral'
               ? <input className='input is-rounded'
@@ -95,13 +107,20 @@ class Inputs extends Component {
           {this.state.type === 'ostomy' ? <div className='column'>
             <input className='input is-rounded' type='text' placeholder='# of times changed' value={this.state.ostomyChange} onChange={this.handleOstomy} />
           </div> : null}
+
+          {/* comments */}
           <div className='column'>
             <input className='input is-rounded' type='text' placeholder='Comments' value={this.state.comments} onChange={this.handleComments} />
           </div>
+
+          {/* button */}
           <div className='column'>
-            <div className='control'>
+            {this.state.value ? <div className='control'>
               <button className='button is-primary is-rounded'>Submit</button>
-            </div>
+            </div> : <div className='control'>
+              <button className='button is-primary is-rounded' disabled>Submit</button>
+            </div>}
+
           </div>
         </div>
       </form>
@@ -109,18 +128,13 @@ class Inputs extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    inputValues: state.input
-  }
-}
+const mapStateToProps = (state) => ({
+  input: state.input
+})
 
 const mapDispatchToProps = (dispatch) => ({
-  addUrine: (input) => dispatch({
-    type: 'ADD_URINE',
-    value: input.value,
-    date: input.date,
-    comments: input.comments
+  add: (category, value, date, comments, change) => dispatch({
+    type: 'ADD', category, value, date, comments, change
   })
 })
 
