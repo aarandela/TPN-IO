@@ -17,30 +17,38 @@ const initialState = {
     value: 20,
     date: 'Fri Mar 01 2019 13:45:28',
     comments: 'green'
+  }, {
+    type: 'gtube',
+    value: 20,
+    date: 'Fri Mar 01 2019 13:45:28',
+    comments: 'green'
+  }, {
+    type: 'gtube',
+    value: 20,
+    date: 'Fri Mar 01 2019 13:45:28',
+    comments: 'green'
+  }, {
+    type: 'gtube',
+    value: 20,
+    date: 'Fri Mar 01 2019 13:45:28',
+    comments: 'green'
   }
   ]
 }
 
 const inputReducer = (state = initialState, action) => {
+  const { category, value, date, comments, change, index } = action
   switch (action.type) {
-    case 'ADD_URINE':
-      return state
-
-    case 'ADD_GTUBE':
-      return state
-
-    case 'ADD_OSTOMY':
-      return state
-
-    case 'ADD_ORAL':
+    case 'ADD':
+      // let newInput = []
+      // let newInputObj = [{ type: category, value, date, comments, ostomyChange: change }]
+      // newInput = stateArr.concat(newInputObj)
       return state
 
     case 'DELETE':
-      const newInput = state.input
-      newInput.filter((data, index) => index !== action.index)
-      return {
-        input: newInput
-      }
+      let newInput = JSON.parse(JSON.stringify(state))
+      newInput.slice(0, 1)
+      return newInput
 
     default:
       return state

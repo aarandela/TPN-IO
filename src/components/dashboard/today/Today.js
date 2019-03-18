@@ -16,7 +16,7 @@ export default class Today extends Component {
   render () {
     return (
       <React.Fragment>
-        <section className='section' style={{ padding: '20px 0 10px 0' }}>
+        <section className='section' style={{ padding: '5px 0 30px 0' }}>
           <div className='container'>
             <h1 className='title has-text-centered' style={{ padding: '0' }}
             >Recent Inputs
@@ -24,9 +24,7 @@ export default class Today extends Component {
           </div>
         </section>
 
-        <div className='columns'>
-          <RecentInputs />
-        </div>
+        <RecentInputs />
 
         <div className='tile is-ancestor'>
           <TodayUrine />

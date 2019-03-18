@@ -2,8 +2,8 @@ import React from 'react'
 
 const TodayGtube = () => {
   return (
-    <div>
-      <div className='tile is-parent'>
+    <React.Fragment>
+      <div className='tile is-4 is-parent'>
         <article className='tile is-child
                             notification
                             is-success
@@ -18,7 +18,7 @@ const TodayGtube = () => {
           </div>
         </article>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 
