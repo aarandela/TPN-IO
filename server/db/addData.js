@@ -11,13 +11,13 @@ router.use(
 
 const db = require('../models')
 
-const urineDb = {
+const addData = {
   // Reference functions down below
   addUrine,
   addGtube,
   addOstomy
 }
-module.exports = urineDb
+module.exports = addData
 
 function addUrine (value, comments, date, time, user_id) {
   return new Promise((resolve, reject) => {
