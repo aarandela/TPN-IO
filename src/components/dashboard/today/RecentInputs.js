@@ -15,7 +15,7 @@ class RecentInputs extends Component {
     console.log('in recentInputs.js', this.props)
     return (
       <div className='columns'>
-        {this.props.inputValues.map((value, index) =>
+        {/* {this.props.inputValues.map((value, index) =>
           <InputCard
             index={index}
             type={value.type}
@@ -23,7 +23,7 @@ class RecentInputs extends Component {
             date={value.date}
             comments={value.comments}
             ostomyChange={value.ostomyChange}
-          />)}
+          />)} */}
       </div>
     )
   }

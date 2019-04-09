@@ -16,8 +16,8 @@ const bcrypt = require('bcrypt')
 const saltRounds = 10
 
 const userdb = {
-  createUser: createUser,
-  checkLogin: checkLogin
+  createUser,
+  checkLogin
 
 }
 module.exports = userdb

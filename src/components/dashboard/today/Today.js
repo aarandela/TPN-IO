@@ -13,13 +13,17 @@ export default class Today extends Component {
     }
   }
 
+  componentDidMount () {
+
+  }
+
   render () {
     return (
       <React.Fragment>
         <section className='section' style={{ padding: '5px 0 30px 0' }}>
           <div className='container'>
-            <h1 className='title has-text-centered' style={{ padding: '0' }}
-            >Recent Inputs
+            <h1 className='title has-text-centered' style={{ padding: '0' }}>
+            Recent Inputs
             </h1>
           </div>
         </section>
