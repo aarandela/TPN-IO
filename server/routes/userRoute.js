@@ -17,7 +17,7 @@ module.exports = router
 const userdb = require('../db/users')
 const validator = require('email-validator')
 
-router.post('/login', (req, res) => {
+router.post('/register', (req, res) => {
   let user = req.body.user
   if (user.username) {
     if (validator.validate(user.email)) {

@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import RecentInputs from './RecentInputs'
 import TodayUrine from './TodayUrine'
 import TodayGtube from './TodayGtube'
 import TodayOstomy from './TodayOstomy'
+import Axios from 'axios'
 
-export default class Today extends Component {
+class Today extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-
+      getData: false
     }
   }
 
   componentDidMount () {
-
+    this.set({ getData: false })
+    Axios.get('')
   }
 
   render () {
@@ -39,3 +42,13 @@ export default class Today extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+
+})
+
+const mapDispatchToProps = (dispatch) => ({
+
+})
+
+export default (mapStateToProps, mapDispatchToProps)(Today)
