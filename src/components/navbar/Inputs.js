@@ -7,7 +7,7 @@ class Inputs extends Component {
     super(props)
 
     this.state = {
-      type: 'urine',
+      category: 'URINE',
       value: null,
       date: new Date(),
       comments: '',
@@ -16,14 +16,14 @@ class Inputs extends Component {
     this.handleChangeDate = this.handleChangeDate.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleInputValue = this.handleInputValue.bind(this)
-    this.handleType = this.handleType.bind(this)
+    this.handleCategory = this.handleCategory.bind(this)
     this.handleComments = this.handleComments.bind(this)
     this.handleOstomy = this.handleOstomy.bind(this)
   }
 
-  handleType (evt) {
+  handleCategory (evt) {
     this.setState({
-      type: evt.target.value
+      category: evt.target.value
     })
   }
 
@@ -54,7 +54,7 @@ class Inputs extends Component {
   handleSubmit (evt) {
     evt.preventDefault()
     this.props.add(
-      this.state.type,
+
       this.state.value,
       this.state.date,
       this.state.comments,
@@ -65,10 +65,10 @@ class Inputs extends Component {
       comments: '',
       ostomyChange: null
     })
+    console.log(this.props.input)
   }
 
   render () {
-    console.log('in inputs', this.props)
     return (
       <form onSubmit={this.handleSubmit}>
         <div className='columns box'>
@@ -76,11 +76,11 @@ class Inputs extends Component {
           {/* value */}
           <div className='column is-one-fifth is-right'>
             <div className='select is-rounded is-fullwidth'>
-              <select value={this.state.type} onChange={this.handleType}>
-                <option value='urine'>Urine</option>
-                <option value='gtube'>Gtube</option>
-                <option value='ostomy'>Ostomy</option>
-                <option value='oral'>Oral</option>
+              <select value={this.state.type} onChange={this.handleCategory}>
+                <option value='URINE'>Urine</option>
+                <option value='GTUBE'>Gtube</option>
+                <option value='OSTOMY'>Ostomy</option>
+                <option value='ORAL'>Oral</option>
               </select>
             </div>
           </div>
@@ -129,12 +129,12 @@ class Inputs extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  input: state.input
+  input: state
 })
 
 const mapDispatchToProps = (dispatch) => ({
   add: (category, value, date, comments, change) => dispatch({
-    type: 'ADD', category, value, date, comments, change
+    type: `ADD_${category}`, value, date, comments, change
   })
 })
 

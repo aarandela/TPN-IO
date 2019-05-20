@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 
 // Redux
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, compose } from 'redux'
 import rootReducer from './reducers'
 
 // React Router

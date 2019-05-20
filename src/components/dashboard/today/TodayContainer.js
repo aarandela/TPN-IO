@@ -4,7 +4,7 @@ import RecentInputs from './RecentInputs'
 import TodayUrine from './TodayUrine'
 import TodayGtube from './TodayGtube'
 import TodayOstomy from './TodayOstomy'
-import Axios from 'axios'
+import axios from 'axios'
 
 class Today extends Component {
   constructor (props) {
@@ -16,8 +16,8 @@ class Today extends Component {
   }
 
   componentDidMount () {
-    this.set({ getData: false })
-    Axios.get('')
+    // this.set({ getData: false })
+    // axios.get('')
   }
 
   render () {
@@ -51,4 +51,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 })
 
-export default (mapStateToProps, mapDispatchToProps)(Today)
+export default connect(mapStateToProps, mapDispatchToProps)(Today)
