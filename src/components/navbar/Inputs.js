@@ -54,7 +54,7 @@ class Inputs extends Component {
   handleSubmit (evt) {
     evt.preventDefault()
     this.props.add(
-
+      this.state.category,
       this.state.value,
       this.state.date,
       this.state.comments,
