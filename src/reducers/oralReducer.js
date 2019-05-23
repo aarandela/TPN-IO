@@ -1,11 +1,11 @@
-const ostomy = []
+const oral = []
 
-const ostomyReducer = (state = ostomy, action) => {
+const oralReducer = (state = oral, action) => {
   // Deep Copy
   let newState = JSON.parse(JSON.stringify(state))
 
   switch (action.type) {
-    case 'ADD_OSTOMY':
+    case 'ADD_ORAL':
       newState.push(action.payload)
       return newState
     default:
@@ -13,4 +13,4 @@ const ostomyReducer = (state = ostomy, action) => {
   }
 }
 
-export default ostomyReducer
+export default oralReducer

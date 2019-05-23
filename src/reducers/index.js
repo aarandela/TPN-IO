@@ -4,11 +4,13 @@ import { combineReducers } from 'redux'
 import urine from './urineReducer'
 import ostomy from './ostomyReducer'
 import gtube from './gtubeReducer'
+import oral from './oralReducer'
 
 const rootReducer = combineReducers({
   urine,
   ostomy,
-  gtube
+  gtube,
+  oral
 })
 
 export default rootReducer

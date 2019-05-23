@@ -6,7 +6,7 @@ const gtubeReducer = (state = gtube, action) => {
 
   switch (action.type) {
     case 'ADD_GTUBE':
-      newState = action.payload
+      newState.push(action.payload)
       return newState
     default:
       return state

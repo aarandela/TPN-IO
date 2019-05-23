@@ -8,10 +8,10 @@ class Inputs extends Component {
 
     this.state = {
       category: 'URINE',
-      value: null,
+      value: '',
       date: new Date(),
       comments: '',
-      ostomyChange: null
+      ostomyChange: ''
     }
     this.handleChangeDate = this.handleChangeDate.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -61,11 +61,11 @@ class Inputs extends Component {
       this.state.ostomyChange)
     evt.target.reset()
     this.setState({
-      value: null,
+      value: '',
       comments: '',
-      ostomyChange: null
+      ostomyChange: ''
     })
-    console.log(this.props.input)
+    console.log('store is: ', this.props.input)
   }
 
   render () {
@@ -76,7 +76,7 @@ class Inputs extends Component {
           {/* value */}
           <div className='column is-one-fifth is-right'>
             <div className='select is-rounded is-fullwidth'>
-              <select value={this.state.type} onChange={this.handleCategory}>
+              <select value={this.state.category} onChange={this.handleCategory}>
                 <option value='URINE'>Urine</option>
                 <option value='GTUBE'>Gtube</option>
                 <option value='OSTOMY'>Ostomy</option>
@@ -94,7 +94,7 @@ class Inputs extends Component {
 
           {/* ternary for oral/ostomy category */}
           <div className='column'>
-            {this.state.type === 'oral'
+            {this.state.category === 'ORAL'
               ? <input className='input is-rounded'
                 type='text'
                 placeholder='Intake Value'
@@ -104,7 +104,7 @@ class Inputs extends Component {
                 placeholder='Output Value'
                 onChange={this.handleInputValue} />}
           </div>
-          {this.state.type === 'ostomy' ? <div className='column'>
+          {this.state.category === 'OSTOMY' ? <div className='column'>
             <input className='input is-rounded' type='text' placeholder='# of times changed' value={this.state.ostomyChange} onChange={this.handleOstomy} />
           </div> : null}
 
@@ -134,7 +134,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   add: (category, value, date, comments, change) => dispatch({
-    type: `ADD_${category}`, value, date, comments, change
+    type: `ADD_${category}`,
+    payload: { value, date, comments, change }
   })
 })
 

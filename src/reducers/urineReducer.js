@@ -6,10 +6,10 @@ const urineReducer = (state = urine, action) => {
 
   switch (action.type) {
     case 'ADD_URINE':
-      newState = action.payload
+      newState.push(action.payload)
       return newState
     default:
-      return state
+      return newState
   }
 }
 
