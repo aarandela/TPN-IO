@@ -1,17 +1,14 @@
-'use strict'
+'use strict';
 module.exports = (sequelize, DataTypes) => {
   const gtube = sequelize.define('gtube', {
+    user_id: DataTypes.INTEGER,
     value: DataTypes.INTEGER,
     comments: DataTypes.STRING,
     date: DataTypes.STRING,
     time: DataTypes.STRING
-  }, { freezeTableName: true })
-  gtube.associate = function (models) {
+  }, {});
+  gtube.associate = function(models) {
     // associations can be defined here
-    gtube.belongsTo(models.users, {
-      foreignKey: 'user_id',
-      onDelete: 'CASCADE'
-    })
-  }
-  return gtube
-}
+  };
+  return gtube;
+};

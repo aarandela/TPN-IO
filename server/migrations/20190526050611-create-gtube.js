@@ -1,12 +1,21 @@
-'use strict'
+'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('urine', {
+    return queryInterface.createTable('gtubes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       value: {
         type: Sequelize.INTEGER
@@ -14,33 +23,23 @@ module.exports = {
       comments: {
         type: Sequelize.STRING
       },
-      count: {
-        type: Sequelize.INTEGER
-      },
       date: {
         type: Sequelize.STRING
       },
       time: {
         type: Sequelize.STRING
       },
-      user_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'users',
-          key: 'id'
-        }
-      },
       createdAt: {
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.DATE
       }
-    })
+    });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('urines')
+    return queryInterface.dropTable('gtubes');
   }
-}
+};
