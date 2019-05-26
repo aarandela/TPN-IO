@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     comments: DataTypes.STRING,
     date: DataTypes.STRING,
     time: DataTypes.STRING
-  }, {});
+  }, {freezeTableName: true});
   oral.associate = function(models) {
     // associations can be defined here
   };

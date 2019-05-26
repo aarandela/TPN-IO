@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     date: DataTypes.STRING,
     time: DataTypes.STRING,
     changed: DataTypes.INTEGER
-  }, {});
+  }, {freezeTableName: true});
   ostomy.associate = function(models) {
     // associations can be defined here
   };

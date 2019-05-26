@@ -15,7 +15,8 @@ const addData = {
   // Reference functions down below
   addUrine,
   addGtube,
-  addOstomy
+  addOstomy,
+  addOral
 }
 module.exports = addData
 
@@ -55,6 +56,7 @@ function addGtube (value, comments, date, time, user_id) {
       })
   })
 }
+
 function addOstomy (value, comments, date, time, user_id, changed) {
   return new Promise((resolve, reject) => {
     db.urine.create({
@@ -62,6 +64,24 @@ function addOstomy (value, comments, date, time, user_id, changed) {
       value,
       comments,
       changed,
+      date,
+      time
+    })
+      .then(response => {
+        resolve(response)
+      })
+      .catch(error => {
+        reject(error)
+      })
+  })
+}
+
+function addOral (value, comments, date, time, user_id) {
+  return new Promise((resolve, reject) => {
+    db.oral.create({
+      user_id,
+      value,
+      comments,
       date,
       time
     })

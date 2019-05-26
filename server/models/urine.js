@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     count: DataTypes.INTEGER,
     date: DataTypes.STRING,
     time: DataTypes.STRING
-  }, {});
+  }, {freezeTableName: true});
   urine.associate = function(models) {
     // associations can be defined here
   };

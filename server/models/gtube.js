@@ -6,7 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     comments: DataTypes.STRING,
     date: DataTypes.STRING,
     time: DataTypes.STRING
-  }, {});
+  }, {
+    freezeTableName: true
+  });
   gtube.associate = function(models) {
     // associations can be defined here
   };
